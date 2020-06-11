@@ -1,5 +1,6 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+
+import Button from './button'
 
 class App extends React.Component{
     constructor () {  
@@ -16,12 +17,8 @@ class App extends React.Component{
     render(){
         return (
             <div>
-                <h1>
-                    hola { this.state.name + ' ' + this.state.lastName}
-                </h1>
-                <h2>
-                    mundo
-                </h2>
+                < Button />
+                
             </div>
         )
     }
