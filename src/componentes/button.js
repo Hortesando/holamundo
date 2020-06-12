@@ -1,12 +1,17 @@
-    import React from 'react'
+import React from 'react'
 
-    class Button extends React.Component{
-        constructor (){
-            super()
-        }
+class Button extends React.Component{
+    constructor(){
+        super()
+    }
 
-        render(){
-            return(
-                
-            )
-        }
+    render(){
+        return (
+            <button class="ui primary button">
+                Comentar
+            </button>
+        )
+    }
+}
+
+export default Button

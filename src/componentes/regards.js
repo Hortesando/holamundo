@@ -1,10 +1,16 @@
 import React from 'react'
 
 class Regards extends React.Component{
-constructor(props){
-    super()
+    constructor(props){
+        super()
+    }
+
+    render(){
+        return (
+            <div>
+                <h1>Hola: {this.props.objectName.name}</h1>
+            </div>
+        )
+    }
 }
-//render {}
-  //  <div> 
-    
-    //</div>
+export default Regards

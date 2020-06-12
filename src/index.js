@@ -7,9 +7,10 @@ import ReactDOM from 'react-dom'
 const App = () => {
     return <div>hola mundo</div>
 }
+
 // renderizado de componente
     ReactDOM.render (
-<App/>,
+        <App/>,
 document.querySelector('#root')
 
     )

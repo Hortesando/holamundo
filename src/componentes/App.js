@@ -1,24 +1,41 @@
 import React from 'react'
+import Faker from 'faker'
 
+import Comments from './comments'
 import Button from './button'
 
 class App extends React.Component{
-    constructor () {  
+    constructor(){
         super()
         this.state = {
-            name: 'Hortensia',
-            lastName:'Sandoval Gonzalez' 
-            }      
-    this.ChangeState = this.ChangeState.bind (this)
+            comments: []
         }
-        ChangeState(){
-            this.setState({name: 'Esther' + lastName: 'Gonzalez'})
+    }
+
+    addComment(){
+        let comment = {
+            userAvatar: Faker.image.avatar(),
+            name: Faker.name.firstName,
+            date: Date.now().toLocaleString(),
+            comment: Faker.lorem.paragraph()
         }
+        this.setState({comments: comment})
+    }
+
     render(){
         return (
             <div>
-                < Button />
-                
+                <Button />
+                {
+                    this.state.comments.map((comment) => { 
+                        return <Comments 
+                            userAvatar={comment.userAvatar} 
+                            name={comment.name} 
+                            date={comment.date}
+                            comment={comment.comment}
+                        />
+                    })
+                }
             </div>
         )
     }
