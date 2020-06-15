@@ -8,30 +8,40 @@ class App extends React.Component{
     constructor() {
         super()
         this.state = {
-            name: 'Sebastian',
-            lastName: 'Ruiz'
+            comments: []
         }
-        this.changeState = this.changeState.bind (this)
-        }
-
-    changeState(objectName) {
-        this.setState(objectName)        
     }
+
+    addComment () {
+        let comment = {
+            userAvatar: Faker.image.avatar(),
+            name: Faker.name.firstName (),
+            date: Date.now ().toLocaleString(),
+            comment: Faker.lorem.paragraph ()
+        }
+        this.setState ({comments: comment})
+        this.state.comments.push (comment)
+    }
+
+        
         
         render () {
             return ( 
             <div>
-                   <button class="ui primary button">
-                        Comentar
-                   </button>
-
-               <Comments 
+                   <Button/>
+                    {
+                        this.state.comments.map((comment) => {
+                            return <Comments 
                
-               userAvatar={Faker.image.avatar()}
-               name={Faker.name.firstName()}              
-               date= {Date.now ().toLocaleString()}
-               comment= {Faker.lorem.paragraph()} 
-               />
+                            userAvatar={comment.userAvatar}
+                            name={comment.name}              
+                            date= {comment.date}
+                            comment= {comment.comment}
+                            />
+                        })
+                    }
+               
+               
               
               
               
