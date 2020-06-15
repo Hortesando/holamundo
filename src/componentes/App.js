@@ -21,6 +21,10 @@ class App extends React.Component{
             <div>
                    
                <Comments></Comments>
+               <Comments></Comments>
+               <Comments></Comments>
+              
+              
 
                 
             </div>

@@ -15,12 +15,12 @@ class Comments extends React.Component{
                 <div className="content">
                 <a className="author"> {faker.name.firstName ()} </a>
                 <div className="metadata">
-                        <div className="date">2 days ago</div>
+                        <div className="date"> {Date.now ().toLocaleString ()} </div>
                         
                         
                 </div>
                 <div className="text">
-                    Hey guys, I hope this example comment is helping you read this documentation.
+                    { faker.lorem.paragraph ()}
                 </div>
                 </div>
             </div>
