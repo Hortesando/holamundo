@@ -15,7 +15,9 @@ class App extends React.Component{
                 <h1>
                     Hola { this.state.name + ' ' + this.state.lastName }
                 </h1>
-
+                <button>Hortensia</button>
+                <button>Estela</button>
+                <button>Angeles</button>
             </div>
             )
         }
