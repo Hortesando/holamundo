@@ -20,7 +20,7 @@ class App extends React.Component{
             return ( 
             <div>
 
-                <Regards/>
+                <Regards objectName = {this.state}/>
                 <button onClick = {() => this.changeState ({name: 'Hortensia', lastName: 'Sandoval' })}>Hortensia</button>
                 <button onClick = {() => this.changeState ({name: 'Sebastian', lastName: 'Ruiz' })}>Sebastian</button>
                 <button onClick = {() => this.changeState ({name: 'Angeles', lastName: 'Sandoval' })}>Angeles</button>

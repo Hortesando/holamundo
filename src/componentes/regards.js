@@ -2,18 +2,17 @@ import React from 'react'
 
 
 class Regards extends React.Component{
-    constructor (){
+    constructor (props){
         super ()
     }
      render (){
          return (
              <div>
                  <h1>
-                     Hola
+                     Hola:{ this.props.objectName.name}
                  </h1>
-                 <b>
-                     Nombre
-                 </b>
+                 
+                 
              </div>
          )
      }
