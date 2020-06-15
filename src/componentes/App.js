@@ -2,6 +2,7 @@ import React from 'react'
 import Faker from 'faker'
 
 import Comments from './comments'
+import Button from './button'
 
 class App extends React.Component{
     constructor() {
@@ -20,7 +21,10 @@ class App extends React.Component{
         render () {
             return ( 
             <div>
-                   
+                   <button class="ui primary button">
+                        Comentar
+                   </button>
+
                <Comments 
                
                userAvatar={Faker.image.avatar()}
