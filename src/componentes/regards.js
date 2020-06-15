@@ -9,7 +9,8 @@ class Regards extends React.Component{
          return (
              <div>
                  <h1>
-                     Hola:{ this.props.objectName.name}
+                     Hola:
+                     {this.props.objectName.name }
                  </h1>
                  
                  

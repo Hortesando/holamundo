@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Regards from './regards'
+import Comments from './comments'
 
 class App extends React.Component{
     constructor() {
@@ -19,12 +19,9 @@ class App extends React.Component{
         render () {
             return ( 
             <div>
+                   
+               <Comments></Comments>
 
-                <Regards objectName = {this.state}/>
-                <button onClick = {() => this.changeState ({name: 'Hortensia', lastName: 'Sandoval' })}>Hortensia</button>
-                <button onClick = {() => this.changeState ({name: 'Sebastian', lastName: 'Ruiz' })}>Sebastian</button>
-                <button onClick = {() => this.changeState ({name: 'Angeles', lastName: 'Sandoval' })}>Angeles</button>
-               
                 
             </div>
             )
