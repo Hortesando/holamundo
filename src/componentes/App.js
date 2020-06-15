@@ -1,4 +1,5 @@
 import React from 'react'
+import Faker from 'faker'
 
 import Comments from './comments'
 
@@ -20,9 +21,15 @@ class App extends React.Component{
             return ( 
             <div>
                    
-               <Comments></Comments>
-               <Comments></Comments>
-               <Comments></Comments>
+               <Comments 
+               
+               userAvatar={Faker.image.avatar()}
+               name={Faker.name.firstName()}              
+               date= {Date.now ().toLocaleString()}
+               comment= {Faker.lorem.paragraph()} 
+               />
+              
+              
               
               
 

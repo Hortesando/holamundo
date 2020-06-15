@@ -1,26 +1,32 @@
 import React from 'react'
-import faker from 'faker'
+
 
 class Comments extends React.Component{
-        constructor() {
+        constructor(props) {
             super()
+            this.state = {
+                userAvatar: props.userAvatar,
+                name: props.name,
+                date: props.date,
+                comment: props.comment
+            }
         }
     render () {
         return (
                         <div className="ui comments">
             <div classNameName="comment">
                 <a className="avatar">
-                    <img src= {faker.image.avatar()} alt = "Imagen de usuario"/>
+                    <img src= {this.state.userAvatar} alt = "Imagen de usuario"/>
                 </a>
                 <div className="content">
-                <a className="author"> {faker.name.firstName ()} </a>
+                <a className="author"> {this.state.name} </a>
                 <div className="metadata">
-                        <div className="date"> {Date.now ().toLocaleString ()} </div>
+                        <div className="date"> {this.state.date} </div>
                         
                         
                 </div>
                 <div className="text">
-                    { faker.lorem.paragraph ()}
+                    { this.state.comment}
                 </div>
                 </div>
             </div>
