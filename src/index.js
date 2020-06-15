@@ -1,7 +1,7 @@
 // Importado de librerias, modulos y componentes
 import React from 'react'
 import ReactDom from 'react-dom'
-
+import App from './componentes/App'
 
 /* crear componente, notas para la pagina
 
@@ -19,26 +19,6 @@ ReactDom.render(
     document.querySelector('#root')
 )*/
 
-class App extends React.Component{
-    constructor() {
-        super()
-    }
-        render () {
-            return ( 
-            <div>
-
-                <h1>
-                    Hola
-                </h1>
-
-                <h2>
-                    Mundo
-                </h2> 
-            </div>
-            )
-        }
-    
-}
 ReactDom.render(
     <App/>,
     document.querySelector('#root')
