@@ -7,21 +7,12 @@ class App extends React.Component{
             name: 'Sebastian',
             lastName: 'Ruiz'
         }
-        this.changeHortensia = this.changeHortensia.bind (this)
-        this.changeAngeles = this.changeAngeles.bind (this)
-        this.changeEstela = this.changeEstela.bind (this)
-    }
-    changeHortensia(){
-        this.setState ({name: 'Hortensia', lastName:'Sandoval' })
-        
-    }
-    changeAngeles(){
-        this.setState ({name: 'Angeles', lastName:'Sandoval' })
-    }
+        this.changeState = this.changeState.bind (this)
+        }
 
-    changeEstela(){
-        this.setState ({name: 'Estela', lastName:'Martinez' })
-    }   
+    changeState(objectName) {
+        this.setState(objectName)        
+    }
         
         render () {
             return ( 
@@ -30,9 +21,9 @@ class App extends React.Component{
                 <h1>
                     Hola { this.state.name + ' ' + this.state.lastName }
                 </h1>
-                <button onClick = {this.changeHortensia}>Hortensia</button>
-                <button onClick = {this.changeAngeles}>Angeles</button>
-                <button onClick = {this.changeEstela}>Estela</button>
+                <button onClick = {() => this.changeState ({name: 'Hortensia', lastName: 'Sandoval' })}>Hortensia</button>
+                <button onClick = {() => this.changeState ({name: 'Sebastian', lastName: 'Ruiz' })}>Sebastian</button>
+                <button onClick = {() => this.changeState ({name: 'Angeles', lastName: 'Sandoval' })}>Angeles</button>
                
                 
             </div>
