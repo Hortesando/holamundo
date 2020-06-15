@@ -5,53 +5,56 @@ import Comments from './comments'
 import Button from './button'
 
 class App extends React.Component{
-    constructor() {
+    constructor(){
         super()
         this.state = {
-            comments: []
+            comments: [],
+            test: 'hola'
         }
+        this.addComment = this.addComment.bind(this)
+        this.deleteComment = this.deleteComment.bind(this)
     }
 
-    addComment () {
+    addComment(){
         let comment = {
             userAvatar: Faker.image.avatar(),
-            name: Faker.name.firstName (),
-            date: Date.now ().toLocaleString(),
-            comment: Faker.lorem.paragraph ()
+            name: Faker.name.firstName(),
+            date: Date.now().toLocaleString(),
+            comment: Faker.lorem.paragraph()
         }
-        this.setState ({comments: comment})
-        this.state.comments.push (comment)
+        let copyComments = this.state.comments
+        copyComments.push(comment)
+        let copyState = {...this.state, comments: copyComments}
+        this.setState(copyState)
+        // copyState.push(comment)
+        // this.setState({comments: copyState})
     }
 
-        
-        
-        render () {
-            return ( 
+    deleteComment(){
+        let copyComments = this.state.comments
+        copyComments.pop()
+        let copyState = {...this.state.comments, comments: copyComments}
+        this.setState(copyState)
+    }
+
+    render(){
+        return (
             <div>
-                   <Button/>
-                    {
-                        this.state.comments.map((comment) => {
-                            return <Comments 
-               
-                            userAvatar={comment.userAvatar}
-                            name={comment.name}              
-                            date= {comment.date}
-                            comment= {comment.comment}
-                            />
-                        })
-                    }
-               
-               
-              
-              
-              
-              
-
-                
+                <Button func={this.addComment} text={'Comentar'}/>
+                <Button func={this.deleteComment} text={'Borrar'}/>
+                {
+                    this.state.comments.map((comment) => { 
+                        return <Comments 
+                            key={`comment_${comment.name}_${Date.now()}`}
+                            userAvatar={comment.userAvatar} 
+                            name={comment.name} 
+                            date={comment.date}
+                            comment={comment.comment}
+                        />
+                    })
+                }
             </div>
-            )
-        }
-    
+        )
+    }
 }
-
 export default App
